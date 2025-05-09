@@ -29,7 +29,8 @@
     "start-local": "npm run generate-entry-point && npm run cds-watch",
     "generate-entry-point": "dev-cap-tools gen-entrypoint",
     "cds-watch": "cds watch --open",
-    "watch-minhwanhwang_22_studenth22.customermessage": "cds watch --open minhwanhwang_22_studenth22.customermessage/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-minhwanhwang_22_studenth22.customermessage": "cds watch --open minhwanhwang_22_studenth22.customermessage/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-minhwanhwang_22_studenth22.productfaqapplication": "cds watch --open minhwanhwang_22_studenth22.productfaqapplication/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "sql": {
@@ -57,14 +58,13 @@
           "credentials": {
             "destination": "S4HCP-ServiceOrder-Odata"
           }
-        },
-        "csrf": true,
-        "csrfInBatch": true
+        }
       }
     }
   },
   "lcap": true,
   "sapux": [
-    "app/minhwanhwang_22_studenth22.customermessage"
+    "app/minhwanhwang_22_studenth22.customermessage",
+    "app/minhwanhwang_22_studenth22.productfaqapplication"
   ]
 }
