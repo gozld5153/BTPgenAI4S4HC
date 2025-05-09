@@ -96,7 +96,7 @@ annotate service.CustomerMessage with @(
             {
                 $Type : 'UI.DataField',
                 Value : a_ServiceOrder_ServiceOrder,
-                Label : 'a_ServiceOrder_ServiceOrder',
+                Label : 'Service Order',
             },
         ],
     },
@@ -138,9 +138,31 @@ annotate service.CustomerMessage with @(
 );
 
 annotate service.CustomerMessage with {
-    a_ServiceOrder @Common.Text : {
-        $value : a_ServiceOrder.ServiceOrderDescription,
-        ![@UI.TextArrangement] : #TextSeparate
+    a_ServiceOrder @(
+        Common.Text : {
+            $value : a_ServiceOrder.ServiceOrderDescription,
+            ![@UI.TextArrangement] : #TextSeparate
+        },
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'A_ServiceOrder',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : a_ServiceOrder_ServiceOrder,
+                    ValueListProperty : 'ServiceOrder',
+                },
+            ],
+            Label : 'Service Order',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
+};
+
+annotate service.A_ServiceOrder with {
+    ServiceOrder @Common.Text : {
+        $value : ServiceOrderDescription,
+        ![@UI.TextArrangement] : #TextLast,
     }
 };
 
