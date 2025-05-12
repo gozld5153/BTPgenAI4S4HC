@@ -55,6 +55,7 @@ await Promise.all(customerMessages.map(async customerMessage => {
         } = resultJSON;
 
         // Validate the response from the preprocessing service
+        // Check for missing essential fields using a single condition
         if (!fullMessageEnglish || !titleEnglish || !summaryCustomerLanguage || !summaryEnglish || !messageCategory || !messageUrgency || !messageSentiment) {
             LOG.error(`Incomplete response from completion service for CustomerMessage ID ${ID}`);
             return;  // Skip this message and proceed to the next
