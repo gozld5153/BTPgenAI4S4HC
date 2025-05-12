@@ -4,7 +4,21 @@ using {minhwanhwang_22_STUDENTH22 as my} from '../db/schema.cds';
 @path: '/service/minhwanhwang_22_STUDENTH22'
 service minhwanhwang_22_STUDENTH22Srv {
     @odata.draft.enabled
-    entity CustomerMessage as projection on my.CustomerMessage;
+    entity CustomerMessage as projection on my.CustomerMessage
+        actions {
+            @cds.odata.bindingparameter.name: '_it'
+            @Common.SideEffects             : {TargetProperties: [
+                '_it/suggestedResponseEnglish',
+                '_it/suggestedResponseCustomerLanguage'
+            ]}
+            action Action1();
+
+            @(
+                cds.odata.bindingparameter.name: '_it',
+                Common.SideEffects             : {TargetProperties: ['_it/a_ServiceOrder_ServiceOrder']}
+            )
+            action Action2();
+        };
 
     entity A_ServiceOrder  as
         projection on S4HCP_ServiceOrder_Odata.A_ServiceOrder {

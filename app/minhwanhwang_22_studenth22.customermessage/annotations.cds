@@ -135,6 +135,18 @@ annotate service.CustomerMessage with @(
             Value : summaryEnglish,
         },
     ],
+    UI.Identification : [
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'minhwanhwang_22_STUDENTH22Srv.Action1',
+            Label : 'Generate Reply',
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'minhwanhwang_22_STUDENTH22Srv.Action2',
+            Label : 'Maintain SO',
+        },
+    ],
 );
 
 annotate service.CustomerMessage with {
